@@ -1,0 +1,196 @@
+---
+---
+@import 'helper/_variable.scss';
+@import 'helper/_mixin.scss';
+
+// banner
+.industry-banner{
+	background-image: url($img + "join-us/contact-banner.png");
+}
+// tab 切换
+.tab-floor1{
+	.map-img{
+		width: 90%;
+		margin: 30px auto;
+		.img{
+			width: 100%;
+			height: 0;
+			padding-bottom: (717 / 880) * 100%;
+			background: center no-repeat;
+			background-size: contain;
+			
+			&.floor-1{
+				background-image: url($img + "industry/zhihui-wuliu.png")
+			}
+			&.floor-2{
+				background-image: url($img + "industry/tese-xiaozhen.png")
+			}
+			&.floor-3{
+				background-image: url($img + "industry/keji-nongye.png")
+			}
+		}
+	}
+	.map-info{
+		width: 100%;
+		margin-top: 100px;
+		background: #35577f;
+		color: #fff;
+		font-size: 36px;
+		text-align: center;
+		li{
+			line-height: 2.5;
+		}
+	}
+}
+
+// tech-floor 未名信息技术
+.tab-floor2{
+	position: relative;
+	margin: 60px 0;
+	.text-box{
+		padding: 30px 30px ;
+		font-size: 18px;
+		line-height: 2;
+		.link-btn{
+			float: right;
+			margin-top: 100px;
+			border: none;
+			color: $primary;
+			font-size: 20px;
+			text-align: center;
+			&:after{
+				content:'  >';
+			}
+		}
+	}
+	.img-box{
+		height: 760px;
+		background-size: cover;
+	}
+
+	.floor-1{
+		.img-box{
+			background: url($img + 'industry/img-bg.png') center no-repeat;
+		}
+	}
+	.floor-2{
+		.img-box{
+			background: url($img + 'industry/img-bg.png') center no-repeat;
+		}
+	}
+	.floor-3{
+		.img-box{
+			background: url($img + 'industry/img-bg.png') center no-repeat;
+		}
+	}
+
+	.fs-lg{
+		margin-bottom: 20px;
+	}
+}
+
+// tab 切换
+.tab-floor{
+	.floor-cont{
+		display: none;
+		&.act{
+			display: block;
+		}
+	}
+}
+
+
+@media (min-width: $screen-sm) and (max-width: $screen-md){
+
+	// tab 切换
+	.tab-floor{
+		.map-info{
+			padding: 20px 0;
+			font-size: 24px;
+			li{
+				line-height: 2.5;
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-sm) {
+	// tab 切换
+	.tab-floor1{
+		.map-img{
+			margin-top: 20px;
+			margin-bottom: 0;
+		}
+		.map-info{
+			margin-top: 0;
+			margin-left: 30px;
+			padding: 20px 0;
+			font-size: 16px;
+		}
+	}
+
+	.tab-floor2{
+		.text-box{
+			color: #fff;
+			.link-btn{
+				display: inline-block;
+				height: 40px;
+				line-height: 38px;
+				width: 100%;
+				border: 1px solid #a2a2a3;
+				border-radius: 5px;
+				color: #fff;
+				font-size: 16px;
+				&:after{
+					content:'';
+				}
+			}
+		}
+		.floor-1{
+			.text-box{
+				background: url($img + 'industry/img-bg.png') center no-repeat;
+			}
+		}
+		.floor-2{
+			.text-box{
+				background: url($img + 'industry/img-bg.png') center no-repeat;
+			}
+		}
+		.floor-3{
+			.text-box{
+				background: url($img + 'industry/img-bg.png') center no-repeat;
+			}
+		}
+
+	}
+
+
+	// tech-floor 未名信息技术
+	// .tech-floor{
+	// 	margin: 30px 0;
+	// 	.fs-lg{
+	// 		font-size: 28px;
+	// 	}
+	// 	.text-box{
+	// 		color: #fff;
+	// 		background: url($img + 'industry/img-bg.png') center no-repeat;
+	// 		background-size: cover;
+	// 		font-size: 14px;
+	// 		.btn{
+	// 			display: inline-block;
+	// 			line-height: 38px;
+	// 			height: 40px;
+	// 			width: 100%;
+	// 			border: 1px solid #a2a2a3;
+	// 			border-radius: 5px;
+	// 			color: #fff;
+	// 			font-size: 16px;
+	// 			&:after{
+	// 				content:'';
+
+	// 			}
+	// 		}
+	// 	}
+	
+	// }
+}

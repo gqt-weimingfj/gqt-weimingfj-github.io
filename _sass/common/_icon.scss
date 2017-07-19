@@ -1,0 +1,33 @@
+.ii {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: center no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    &[class*=i-arrow-]{
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #000;
+        border-right: 1px solid #000;
+    }
+    &.i-arrow-top{@include transform(rotate(-45deg)); }
+    &.i-arrow-right{@include transform(rotate(45deg)); }
+    &.i-arrow-bottom{@include transform(rotate(135deg)); }
+    &.i-arrow-left{@include transform(rotate(-135deg)); }
+
+    &.i-x{
+        position: relative;
+        &::before,&::after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            display: inline-block;
+            width: 100%;
+            border-bottom: 2px solid #999;
+        }
+        &::before{@include transform(rotate(45deg))}
+        &::after{@include transform(rotate(-45deg))}
+    }
+}

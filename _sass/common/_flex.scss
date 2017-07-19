@@ -1,0 +1,11 @@
+.flex-box {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+}
+
+.flex1 {
+    flex: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+}

@@ -1,0 +1,93 @@
+$screen-size: (xs: 480px, sm: 768px, md: 992px, lg: 1200px );
+$grid-count: 12;
+.row {
+	display: block;
+	clear: right;
+	&::after{
+		content: '';
+		display: block;
+		height: 0;
+		clear: both;
+	}
+}
+
+%fll{float: left};
+
+// 生成 col-push-1 col-pull-1 
+@mixin make-col-offset(){
+	@for $i from 1 through $grid-count { 
+	    .col-push-#{$i}{
+	        margin-left: ($i / $grid-count) * 100%;
+	    }
+	    .col-pull-#{$i}{
+	        margin-right: ($i / $grid-count) * 100%;
+	    }
+	}
+}
+// 生成 col-xs-push-1 col-xs-pull-1
+@mixin make-col-media-offset($type, $sreenSize){
+	@media (min-width: $sreenSize) {
+		@for $i from 1 through $grid-count { 
+		    .col-#{$type}-push-#{$i}{
+		        margin-left: ($i / $grid-count) * 100%;
+		    }
+		    .col-#{$type}-pull-#{$i}{
+		        margin-right: ($i / $grid-count) * 100%;
+		    }
+		}
+	}
+}
+
+// 生成 col-1
+@mixin make-col(){
+	@for $i from 1 through $grid-count { 
+	    .col-#{$i}{
+	        width: ($i / $grid-count) * 100%;
+	    }
+	}
+	@for $i from 1 through $grid-count { 
+	    .col-#{$i}{
+	        @extend %fll;
+	        min-height: 1px;
+	    }
+	}
+}
+// 生成 col-xs-1
+@mixin make-media-col($type, $sreenSize){
+	@media (min-width: $sreenSize) {
+		@for $i from 1 through $grid-count { 
+		    .col-#{$type}-#{$i}{
+		        width: ($i / $grid-count) * 100%;
+		    }
+		}
+	}
+	@for $i from 1 through $grid-count { 
+	    .col-#{$type}-#{$i}{
+	        @extend %fll;
+	        min-height: 1px;
+	    }
+	}
+}
+// 生成 xs-hidden xs-show
+@mixin make-media-display($type, $sreenSize){
+	@media (max-width: $sreenSize) {
+		.#{$type}-hidden{
+			display: none;
+		}
+		.#{$type}-show{
+			display: block;
+		}
+	}
+}
+
+
+// col-1
+@include make-col();
+@include make-col-offset();
+
+// col-xs-1 col-xs-push-1 xs-hidden
+@each $type , $size in $screen-size {
+	@include make-media-col($type,$size);
+	@include make-col-media-offset($type,$size);
+	@include make-media-display($type,$size);
+}

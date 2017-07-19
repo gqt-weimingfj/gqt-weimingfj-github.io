@@ -1,0 +1,102 @@
+// 卡片
+// 新闻 创业学院 等
+$news-img-size: (400 / 725) * 100%;
+.card{
+	margin-bottom: 48px;
+	border-radius: 6px;
+	box-shadow: 0 1px 3px #ccc;
+	.cd-img{
+		width: 100%;
+		height: auto;
+		border-radius: 6px 6px 0 0;
+		overflow-y: hidden;
+		img{
+			position: relative;
+			width: 100%;
+		}
+	}
+
+	.cd-btm{
+		padding: 40px 30px;
+		font-size: 18px;
+	}
+	.btm-title{
+		margin-bottom: 30px;
+		font-size: 32px;
+	}
+	.btm-summary{
+		height: 6em;
+		line-height: 2;
+		margin-bottom: 40px;
+		
+		display: -webkit-box; 
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
+	.btm-bottom{
+		.i-arrow-right{
+			margin-top: -2px;
+			border-color: $primary;
+		}
+
+		.fr{
+			.ii{
+				position: relative;
+				top: 0;
+				width: 24px;
+				height: 24px;
+				cursor: pointer;
+				transition: all .3s;
+				&:hover{
+					top: -3px;
+				}
+			}
+		}
+		.i-heart{
+			background-image: url($imgIcon + "icon-heart.png");
+			&.act{
+				background-image: url($imgIcon + "icon-heart-act.png");
+			}
+		}
+		.i-share{
+			margin-top: -5px;
+			background-image: url($imgIcon + "icon-share.png")
+		}
+	}
+}
+	
+
+
+
+@media (max-width: $screen-sm) {
+	.card{
+		margin-bottom: 20px;
+
+		.cd-btm{
+			padding: 10px 15px;
+			font-size: 14px;
+		}
+		.btm-title{
+			margin-bottom: 10px;
+			font-size: 18px;
+		}
+		.btm-summary{
+			height: 6em;
+			line-height: 2;
+			margin-bottom: 20px;
+			overflow-y: hidden;
+			
+			display: -webkit-box; 
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+		}
+		.btm-bottom{
+			.fr{
+				.ii{
+					width: 20px;
+					height: 20px;
+				}
+			}
+		}
+	}
+}

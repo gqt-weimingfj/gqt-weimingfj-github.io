@@ -1,0 +1,54 @@
+// 网格元素
+$col-padding: 20px;
+$col-img: 4/3 *100%;
+// 微刊
+.col-wrap{
+	margin-right: -$col-padding;
+	margin-left: -$col-padding;
+	.col-outter{
+		padding-left: $col-padding;
+		padding-right: $col-padding;
+	}
+	.col-item,.col-inner{
+		margin-bottom: 30px;
+		font-size: 18px;
+		.img{
+			width: 100%;
+			height: 0;
+			margin-bottom: 20px;
+			padding-bottom: $col-img;
+			img{
+				width: 100%;
+			}
+		}
+		p.ell{
+			height: 2em;
+			line-height: 2;
+		}
+	}
+}
+
+@media (max-width: $screen-sm) {
+	$col-padding: 15px;
+	// 微刊
+	.col-wrap{
+		margin-right: -$col-padding;
+		margin-left: -$col-padding;
+		.col-outter{
+			padding-left: $col-padding;
+			padding-right: $col-padding;
+		}
+	}
+}
+@media (max-width: $screen-xs) {
+	$col-padding: 10px;
+	// 微刊
+	.col-wrap{
+		margin-right: -$col-padding;
+		margin-left: -$col-padding;
+		.col-outter{
+			padding-left: $col-padding;
+			padding-right: $col-padding;
+		}
+	}
+}

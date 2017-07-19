@@ -1,0 +1,17 @@
+- name: 运吧
+  subName: 智慧物流
+  img: "/common/images/default/index/slider-1.png"
+  summary: “运吧”平台专注于技术创新、产品创新和理念创新，创建“SaaS应用+移动应用+智能硬件”模式，以实体公路港、专业市场、产业集群等物流重要节点为业务据点，实现货主、运输企业、个体司机、收货人的互联互通，打造智慧物流服务平台。
+  sign: 运吧系列
+
+- name: 集结兔
+  subName: 共同配送的理念与运作模式
+  img: "/common/images/default/index/slider-2.png"
+  summary: 专注物流集合配送系统，组建末端共同配送体系，开发物流集合配送管理系统并建立城乡末端配送网点业务。
+  sign: 集结兔配送
+
+# - name: 武夷贡
+#  subName: 健康不嫌贵，好米育良人
+#  img: "/common/images/default/index/slider-3.png"
+#  summary: 福建原省农业厅水稻种子专家和省农科院水稻育种专家10年精心研发、百里挑一的宜优嘉7水稻。荣获省农业厅优质大米金奖以及一级米评价。在亩产千斤的基础上，实现了泰国米的品质，是福建本土真正的优质稻米。
+#  sign: 集结兔配送

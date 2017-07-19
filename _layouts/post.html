@@ -1,0 +1,41 @@
+---
+layout: default
+css: [news-detail.css]
+---
+<!-- top-banner  -->
+{% if page.t %}
+<div class="top-banner news-detail-banner" style="background-image: url('/common/images/default/front/news-detail-banner.png')">
+    <div class="inner">
+        <h2>{{page.t}}</h2>
+        <p>{{page.st}}</p>
+    </div>
+</div>
+{% endif %}
+
+<div class="wrapper-box">
+	{% if page.excerpt != '' %}
+	<div class="news-summary">
+        <p>{{page.excerpt}}</p>
+    </div>
+	{% endif %}
+    <div class="news-contain">
+	{{ content }}
+    </div>
+    <div class="row news-preview">
+    	{% if page.previous %}
+    		<div class="col-xs-5 pre-left">
+    		    <a href="{{page.previous.url}}"><button><i class="ii i-arrow-left"></i></button></a>
+    		    <span class="fc-9">上一篇</span>
+    		    <div><a href="{{page.previous.url}}">{{page.title}}</a></div>
+    		</div>
+    	{% endif %}
+        {% if page.next %}
+        <div class="col-xs-5 col-xs-push-2 pre-right">
+            <a href="{{page.next.url}}"><button><i class="ii i-arrow-right"></i></button></a>
+            <span class="fc-9">下一篇</span>
+            <div><a href="{{page.next.url}}">{{page.title}}</a></div>
+        </div>
+        {% endif %}
+    </div>
+
+</div>

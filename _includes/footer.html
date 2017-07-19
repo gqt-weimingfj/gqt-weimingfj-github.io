@@ -1,0 +1,72 @@
+<!-- footer -->
+<footer class="footer">
+    <div class="wrapper-box">
+        <div class="ft-logo"></div>
+        <div class="links-block">
+            <div class="row">
+                <dl class="col-sm-2 col-12">
+                    <dt>关于未名</dt>
+                    <dd>
+                        <div><a href="#">集团简介</a></div>
+                        <div><a href="#">经营理念</a></div>
+                        <div><a href="#">组织架构</a></div>
+                        <div><a href="#">大事记</a></div>
+                        <div><a href="#">企业资质</a></div>
+                    </dd>
+                </dl>
+                <dl class="col-sm-2 col-12">
+                    <dt>未名产业</dt>
+                    <dd>
+                        <div><a href="#">智慧物流</a></div>
+                        <div><a href="#">现代农业</a></div>
+                        <div><a href="#">特色小镇</a></div>
+                    </dd>
+                </dl>
+                <dl class="col-sm-2 col-12">
+                    <dt>未名文化</dt>
+                    <dd>
+                        <div><a href="#">企业愿景</a></div>
+                        <div><a href="#">管理团队</a></div>
+                        <div><a href="#">未名Family</a></div>
+                        <div><a href="#">创业学院</a></div>
+                        <div><a href="#">未名之歌</a></div>
+                    </dd>
+                </dl>
+                <dl class="col-sm-2 col-12">
+                    <dt>未名新闻</dt>
+                    <dd>
+                        <div><a href="#">企业动态</a></div>
+                        <div><a href="#">行业动态</a></div>
+                        <div><a href="#">未名微刊</a></div>
+                    </dd>
+                </dl>
+                <dl class="col-sm-2 col-12">
+                    <dt>加入未名</dt>
+                    <dd>
+                        <div><a href="#">人才理念</a></div>
+                        <div><a href="#">联系方式</a></div>
+                    </dd>
+                </dl>
+                <dl class="col-sm-2 col-12">
+                    <dd>
+                        <div><a href="#">运吧</a></div>
+                        <div><a href="#">集结兔</a></div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="sm-hidden">
+            关注我们：
+            <a href="#">微博</a> | <a href="#">微信</a> | <a href="#">facebook</a> | <a href="#">twitter</a>
+        </div>
+        <div class="copy-right">
+            版权所有 ©2009 - 2016 未名集团 未经授权不得转载或使用 闽 ICP 备 09078326 号
+        </div>
+    </div>
+</footer>
+<script src="{{'/common/lib/jquery/jQuery-min-1.11.2.js' | relative_url}}"></script>
+<script src="{{'/common/lib/swiper/js/swiper.jquery.min.js' | relative_url}}"></script>
+<script src="{{'/common/js/custom.js' | relative_url}}"></script>
+{% for js in page.script %}
+    <script src="/common/{{ js | relative_url }}"></script>
+{% endfor %}

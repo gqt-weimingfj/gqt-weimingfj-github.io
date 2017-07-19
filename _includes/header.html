@@ -1,0 +1,30 @@
+<header class="header">
+    <div class="wrapper-box">
+        <a href="/" class="logo sm-hidden"><img src="{{'/common/images/default/common/logo.png' | relative_url}}" alt="logo"></a>
+        <a href="/" class="sm-logo"><img src="{{'/common/images/mobile/common/logo.png' | relative_url}}" alt="logo"></a>
+        <!-- 小屏幕 -->
+        <i class="ii i-menu menu-open sm-hidden">
+            <i></i>
+            <i></i>
+            <i></i>
+        </i>
+        <div class="nav">
+            <ul>
+                {% if "/" == page.url %}
+                    <li class="active"><a href="{{ "/" | relative_url}}">首页</a></li>
+                {% else %}
+                    <li><a href="{{ "/" | relative_url}}">首页</a></li>
+                {% endif %}
+                {% assign navs = site.pages | where_exp: "pg", "pg.nav>0" | sort: "nav" %}
+                {% for nav in navs %}
+                    {% if page.url contains nav.url%}
+                        <li class="active"><a href="{{ nav.url | relative_url }}">{{nav.title}}</a></li>
+                    {% else %}
+                        <li><a href="{{ nav.url | relative_url }}">{{nav.title}}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <i class="ii i-close menu-close sm-show">x</i>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,20 @@
+@import 'helper/_variable.scss';
+@import 'helper/_mixin.scss';
+
+
+// common
+@import 'common/_base.scss';
+@import 'common/_grid.scss';
+@import 'common/_common.scss';
+@import 'common/_icon.scss';//icon
+@import 'common/_title.scss';//title
+@import 'common/_header.scss';
+@import 'common/_footer.scss';
+@import 'common/_top-banner.scss';
+@import 'common/_sub-nav.scss';
+@import 'common/_card.scss'; // 新闻等 卡片布局
+@import 'common/_col-item.scss'; // 微刊等 网格布局
+@import 'common/_button.scss'; 
+
+// // 媒体查询
+@import 'common/_media.scss';

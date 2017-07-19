@@ -1,0 +1,48 @@
+// path
+$img: '/common/images/default/';
+$imgCommon: '/common/images/default/common/';
+$imgIcon: '/common/images/default/common/icons/';
+$imgBanner: '/common/images/default/common/banner/';
+
+$imgMobile: '/common/images/mobile/';
+$imgMobileCommon: '/common/images/mobile/common/';
+$imgMobileBanner: '/common/images/mobile/common/banner/';
+$imgMobileIcon: '/common/images/mobile/common/icons/';
+
+// color
+
+
+$primary: #1ba2ff;
+$info: #FF9805;
+$success: #15bc9e;
+$warning: #fb562f;
+$error: #fb562f;
+$red: $error;
+$gray: #c2c2c2;
+
+$primaryLight: lighten($primary,10%);
+$infoLight: lighten($info,10%);
+$successLight: lighten($success,10%);
+$warningLight: lighten($warning,10%);
+$errorLight: lighten($error,10%);
+$redLight: lighten($red,10%);
+$grayLight: lighten($gray,10%);
+
+$c-f2: #f2f2f2;
+$c-f7: #f7f7f7;
+$c-666: #666;
+$c-999: #999;
+$c-ddd: #ddd;
+$c-ccc: #ccc;
+
+
+// wrapper 最大宽度
+$wrapperWidth: 1080px;
+
+
+// 媒体查询阶段
+$screen-size: (xs: 480px, sm: 768px, md: 992px, lg: 1200px );
+$screen-xs: map-get($screen-size,xs);
+$screen-sm: map-get($screen-size,sm);
+$screen-md: map-get($screen-size,md);
+$screen-lg: map-get($screen-size,lg);

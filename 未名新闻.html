@@ -1,0 +1,123 @@
+---
+layout: default
+title: 未名新闻
+permalink: news
+css: [news.css]
+script: [js/pages/news.js ]
+nav: 2
+---
+
+
+    <!-- top-banner  -->
+    <div class="top-banner news-banner">
+        <div class="inner">
+            <h2>未名新闻</h2>
+            <p>未名集团始终以信息技术应用与实体建设经营为两条业务主线，</p>
+            <p>坚持“两个结合”发展战略和“互联网+”商业模式，坚持在信息技术研发应用、</p>
+            <p>行业互联网平台、智慧公路港、信息化专业市场以及特色小镇等产业项目的投资开发与建设运营。</p>
+        </div>
+    </div>
+    <!-- top-banner end -->
+    <div class="sub-nav-wrapper">
+        <div class="wrapper-box">
+            <ul class="sub-nav">
+                <li class="act" data-active="floor-1">
+                    <i class="ii i-main"></i>
+                    <p>集团新闻</p>
+                </li>
+                <li data-active="floor-2">
+                    <i class="ii i-note"></i>
+                    <p>行业动态</p>
+                </li>
+                <li data-active="floor-3">
+                    <i class="ii i-book"></i>
+                    <p>未名微刊</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- tab 切换 -->
+    <!-- 地图 -->
+    <div class="tab-floor">
+        <!-- 集团新闻 -->
+        <div class="floor-cont wrapper-box cf floor-1 act ">
+            <div class="news-wrap">
+                <!-- 新闻 -->
+                {% assign groupPosts = site.posts | where_exp:"pt", "pt.categories contains 'group-news'" %}
+                
+                {% if groupPosts.size > 0 %}
+                    {% for post in groupPosts limit: site.data.news.config.newsLimit  %}
+                        <div class="card card-news">
+                            {% if post.img %}
+                            <div class="cd-img"><img src="{{post.img}}" alt=""></div>
+                            {% endif %}
+                            <div class="cd-btm">
+                                <h5 class="btm-title">{{post.title}}</h5>
+                                <div class="btm-summary">{{post.excerpt}}</div>
+                                <div class="btm-bottom">
+                                    <a href="{{post.url}}" class="fc-primary">阅读更多 <i class="ii i-arrow-right"></i></a>
+                                    <span class="fr">
+                                    <!-- <i class="ii i-share"></i> -->
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="empty">暂无集团新闻数据</div>
+                {% endif %}
+            </div>
+        </div>
+        <!-- 行业动态 -->
+        <div class="floor-cont wrapper-box cf floor-2 ">
+            <div class="news-wrap">
+                <!-- 新闻 -->
+                {% assign industryPosts = site.posts | where_exp:"pt", "pt.categories contains 'industry-news'" %}
+                {% if industryPosts.size > 0 %}
+                    {% for post in industryPosts limit: site.data.news.config.newsLimit %}
+                        <div class="card card-news">
+                            {% if post.img %}
+                            <div class="cd-img"><img src="{{post.img}}" alt=""></div>
+                            {% endif %}
+                            <div class="cd-btm">
+                                <h5 class="btm-title">{{post.title}}</h5>
+                                <div class="btm-summary">{{post.excerpt}}</div>
+                                <div class="btm-bottom">
+                                    <a href="{{post.url}}" class="fc-primary">阅读更多 <i class="ii i-arrow-right"></i></a>
+                                    <span class="fr">
+                                    <!-- <i class="ii i-share"></i> -->
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="empty">暂无行业动态数据</div>
+                {% endif %}
+            </div>
+        </div>
+        <!-- 未名微刊 -->
+        <div class="floor-cont wrapper-box floor-3">
+            <div class="row col-wrap">
+                <!-- 微刊 -->
+                {% assign prints = site.posts | where_exp:"pt","pt.categories contains 'print'" %}
+                {% if prints.size > 0 %}
+                    {% for print in prints limit: site.data.news.config.printsLimit %}
+                        <div class="col-sm-4 col-6 col-outter">
+                            <div class="col-inner">
+                                <div class="img"><img src="{{print.img}}" alt=""></div>
+                                <p class="ell">{{print.title}}</p>
+                                <div>
+                                    <a href="{{print.url}}">在线阅读</a>
+                                    <a href="{{print.download}}">下载查看</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="empty">暂无徽刊数据</div>
+                {% endif %}
+                <!-- 微刊 end -->
+            </div>
+        </div>
+    </div>

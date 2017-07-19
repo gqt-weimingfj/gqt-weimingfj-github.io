@@ -1,0 +1,469 @@
+---
+---
+
+@import 'helper/_variable.scss';
+@import 'helper/_mixin.scss';
+
+// test
+// .join-talk,
+// .tab-floor1,
+// .tab-floor2{
+// 	display: none;
+// }
+
+// + -  
+%i-add{
+	position: relative;
+	&::before,&::after{
+		content:'';
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		margin-top: -1px;
+		display: inline-block;
+		width: 16px;
+		height: 2px;
+		background-color: #FFF;
+	}
+	&::after{
+		transform: rotate(270deg);
+	}
+}
+
+
+// 公共部分
+.join-talk{
+	width: 100%;
+	height: 416px;
+	background: url($img + 'join-us/join-talk.png') center no-repeat;
+	background-size: cover;
+	color: #fff;
+	.wrapper-box{
+		position: relative;
+		top: -55px;
+	}
+	img{
+		width: 110px;
+		height: 110px;
+		margin-bottom: 38px;
+	}
+	h4{
+		font-size: 16px;
+	}
+	h6{
+		opacity: .7;
+	}
+	p{
+		margin-top: 90px;
+		line-height: 1.8;
+		font-size: 16px;
+		opacity: .7;
+	}
+}
+
+.input-group{
+	position: relative;
+	label,.label{
+		line-height: 40px;
+	}
+	input{
+		width: 100%;
+		height: 40px;
+		padding-left: 5px;
+		padding-right: 5px;
+		border: 1px solid #e0e0e0;
+		box-shadow: none;
+		outline: none;
+		vertical-align: middle;
+		font-size: 16px;
+		-webkit-appearance: none;
+	}
+}
+
+
+// 需要tab 切换内容样式
+.tab-floor{
+	// floor1 banner 部分
+	.floor-1{}
+	// floor2 第二部分
+	.tab-floor2{}
+
+	// h3 title
+	.fs-lg{
+		margin-bottom: 30px;
+	}
+
+	.btn{
+		display: inline-block;
+		width: 120px;
+		height: 40px;
+		border: none;
+		border-radius: 5px;
+		outline: none;
+		background-color: #1aa8d3;
+		color: #fff;
+		font-size: 16px;
+		cursor: pointer;
+	}
+}
+
+.floor-1{
+	.floor-join{}
+}
+
+
+
+
+// floor1 banner 部分
+.tab-floor1{
+	// 加入我们 tab banner
+	.floor-1{
+		.top-banner{
+			background-image: url($img + "join-us/join-banner.png");
+		}
+	}
+	// 联系我们 tab banner
+	.floor-2{
+		.top-banner{
+			background-image: url($img + "join-us/contact-banner.png");
+		}
+	}
+}
+// floor2 第二部分
+.tab-floor2{
+	.floor-cont{
+		margin-top: 30px;
+		margin-bottom: 120px;
+	}
+	// 加入我们
+	.floor-1{
+		p{
+			margin-bottom: 40px;
+			font-size: 18px;
+		}
+	}
+	// 联系我们
+	.floor-2{
+		.wrapper-box{
+			font-size: 16px;
+		}
+		[class*=col-]{
+			margin-bottom: 10px;
+		}
+		.mtb20{
+			margin-bottom: 20px;
+			margin-bottom: 20px;
+		}
+		.btn{
+			display: block;
+			width: 300px;
+			margin-top: 30px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+}
+// floor3 第三部分
+.tab-floor3{
+	// 3 common
+	.floor-cont{
+		margin-top: 60px;
+		margin-bottom: 80px;
+	}
+
+	// 加入我们
+	.floor-1{
+
+		.title-box{
+			width: 80%;
+			margin: 0 auto 50px;
+			text-align: center;
+			p{
+				color: #4a4a4a;
+				font-size: 21px
+			}
+		}
+		.job-list{
+			background-color: #f5f5f5;
+			dl{
+				padding: 0 20px;
+				border-bottom: 1px solid #fff;
+				font-size: 16px;
+				&.act{
+					dd{
+						display: block;
+					}
+					.col3{
+						&::after{
+							transform: rotate(0);	
+						}
+					}
+				}
+			}
+			dt{
+				// height: 50px;
+				line-height: 50px;
+			}
+			dd{
+				display: none;
+				padding: 15px 0 50px;
+				border-top: 1px solid #ddd;
+
+				h4{
+					font-size: 21px;
+				}
+				h5{
+					margin: 30px 0;
+					font-size: 18px;
+				}
+				ul,li{
+					list-style: disc inside;
+				}
+			}
+				.col1,
+				.col2,
+				.col3{
+					padding-right: 5px;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+				}
+				.col1{}
+				.col2{
+					color: #9b9b9b;
+				}
+				.col3{
+					@extend %i-add;
+					&::before,&::after{
+						right: 5px;
+						background-color: #4a4a4a;
+					}
+					&::after{
+						transition: all .3s ;
+					}
+				}
+		}
+		.btn{
+			display: block;
+			margin-top: 40px;
+		}
+	}
+	// 联系我们
+	.floor-2{
+		.row{
+			// height: 600px;
+		}
+		// 地址列表
+		.address-list{
+			height: 600px;
+			padding: 50px 50px 0;
+			background: rgba(38,49,59,.9);
+			overflow-x: hidden;
+			overflow-y: auto;
+			// 地址
+			dl{
+				margin-top: -1px;
+				padding: 10px 0;
+				border-top: 1px solid #999;
+				border-bottom: 1px solid #999;
+				color: #fff;
+				&.act{
+					dt::after{
+						transform: rotate(0);
+					}
+					dd{
+						display: block;
+					}
+				}
+				dt{
+					position: relative;
+					height: 50px;
+					line-height: 50px;
+					font-size: 16px;
+					cursor: pointer;
+					@extend %i-add;
+					&::after{
+						transition: all .3s ;
+					}
+				}
+				dd{
+					display: none;
+					font-size: 12px;
+					opacity: .7;
+				}
+			}
+		}
+
+		// 地图
+		.map-box{
+			height: 600px;
+			background: url($img + 'join-us/address-map.png') center no-repeat;
+			background-size: cover;
+		}
+	}
+}
+
+.tab-floor{
+	.floor-cont{
+		display: none;
+		&.act{
+			display: block;
+		}
+	}
+}
+
+// media
+@media (max-width: $screen-sm){
+
+	// 公共部分
+	.join-talk{
+		img{
+			width: 90px;
+			height: 90px;
+		}
+	}
+
+
+	.tab-floor{
+		.fs-lg{
+			margin-bottom: 15px;
+			font-size: 24px;
+		}
+	}
+	.tab-floor2{
+		.floor-cont{
+			margin-top: 30px;
+		}
+		// 加入我们
+		.floor-1{
+			p{
+				margin-bottom: 20px;
+				font-size: 12px;
+			}
+		}
+		// 联系我们
+		.floor-2{
+			.input-group{
+				label{
+					position: absolute;
+					top: 0;
+					left: 10px;
+				}
+				input{
+					padding-left: 80px;
+					text-align: right;
+				}
+			}
+			.btn{
+				width: 100%;
+			}
+		}
+
+	}
+
+
+	// floor3 第三部分
+	.tab-floor3{
+		// 3 common
+		.floor-cont{
+			margin-top: 60px;
+			margin-bottom: 80px;
+		}
+
+		// 加入我们
+		.floor-1{
+			.title-box{
+				p{
+					font-size: 14px;
+				}
+			}
+			.job-list{
+				dl{
+					padding-left: 10px;
+					padding-right: 10px;
+					font-size: 14px;
+				}
+				dt{
+					line-height: 40px;
+				}
+				dd{
+					display: none;
+					padding-top: 15px;
+					padding-bottom: 30px;
+
+					h4{
+						font-size: 18px;
+					}
+					h5{
+						margin-top: 20px;
+						margin-bottom: 20px;
+						font-size: 16px;
+					}
+				}
+				
+			}
+			.btn{
+				width: 100px;
+				height: 36px;
+				margin-top: 20px;
+				font-size: 14px;
+			}
+		}
+		// 联系我们
+		// .floor-2{
+		// 	.row{
+		// 		// height: 600px;
+		// 	}
+		// 	// 地址列表
+		// 	.address-list{
+		// 		height: 600px;
+		// 		padding: 50px 50px 0;
+		// 		background: rgba(38,49,59,.9);
+		// 		overflow-x: hidden;
+		// 		overflow-y: auto;
+		// 		// 地址
+		// 		dl{
+		// 			margin-top: -1px;
+		// 			padding: 10px 0;
+		// 			border-top: 1px solid #999;
+		// 			border-bottom: 1px solid #999;
+		// 			color: #fff;
+		// 			&.act{
+		// 				dt::after{
+		// 					transform: rotate(0);
+		// 				}
+		// 				dd{
+		// 					display: block;
+		// 				}
+		// 			}
+		// 			dt{
+		// 				position: relative;
+		// 				height: 50px;
+		// 				line-height: 50px;
+		// 				font-size: 16px;
+		// 				cursor: pointer;
+		// 				@extend %i-add;
+		// 				&::after{
+		// 					transition: all .3s ;
+		// 				}
+		// 			}
+		// 			dd{
+		// 				display: none;
+		// 				font-size: 12px;
+		// 				opacity: .7;
+		// 			}
+		// 		}
+		// 	}
+
+		// 	// 地图
+		// 	.map-box{
+		// 		height: 600px;
+		// 		background: url($img + 'join-us/address-map.png') center no-repeat;
+		// 		background-size: cover;
+		// 	}
+		// }
+	}
+
+
+}

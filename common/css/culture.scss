@@ -1,0 +1,373 @@
+---
+---
+@import 'helper/_variable.scss';
+@import 'helper/_mixin.scss';
+
+.culture-banner{
+	background-image: url($img + "culture/culture-banner.png");
+}
+
+// 需要tab 切换内容样式
+.tab-floor{
+	// tab 1 内容 企业愿景
+	.floor-1{}
+	// tab 2 内容 管理团队
+	.floor-2{
+
+	}
+	// tab 3 内容 未名Family
+	.floor-3{
+
+	}
+	// tab 4 内容 未名学院
+	.floor-4{
+
+	}
+	// tab 5 内容 未名之歌
+	.floor-5{}
+}
+
+.floor-cont.wrapper{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+// tab 1 内容 企业愿景
+.floor-1{
+	text-align: center;
+	img{
+		max-width: 90%;
+		margin-top: 100px;
+		margin-bottom: 200px;
+	}
+}
+// tab 2 内容 管理团队
+.floor-2{
+
+	.col-wrap{
+		.col-inner{
+			line-height: 1.8;
+			.ell3{
+				height: 4.5em;
+				line-height: 1.5;
+				color: #999;
+				font-size: 14px;
+				overflow-y: hidden;
+				display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; 
+			}	
+		}
+		h4{
+			font-size: 24px;
+		}
+		
+	}
+
+}
+// tab 3 内容 未名Family
+.floor-3{
+	// 轮播
+	.swiper-container{
+		width: 100%;
+		height: 400px;
+	}
+	.swiper-slide{
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	}
+	// 列表
+
+	$col-img: 262 / 380 *100%;
+	.col-wrap{
+		margin-top: 50px;
+		.col-outter{}
+		.col-inner{
+			.img{
+				position: relative;
+				padding-bottom: $col-img;
+			}
+				img{
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+				}
+		}
+	}
+}
+// tab 4 内容 未名学院
+.floor-4{
+	.inner-wrap{
+		max-width: 720px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+// tab 5 内容 未名之歌
+.floor-5{
+	.progress{
+		position: relative;
+		text-align: center;
+		img{
+			width: 100%;
+		}
+		.btn{
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			width: 100px;
+			height: 100px;
+			border: none;
+			background: url($img + 'culture/play.png') center no-repeat;
+			background-size: cover;
+			margin-left: -50px;
+			margin-bottom: -50px;
+			cursor: default;
+			&.btn-play{
+				background-image: url($img + 'culture/play.png');
+			}
+			&.btn-pause{
+				background-image: url($img + 'culture/pause.png');
+			}
+		}
+	}
+	.wrapper{
+		img{
+			max-width: 100%;
+			width: 920px;
+			margin-top: 200px;
+			margin-bottom: 200px;
+		}
+	}
+}
+
+// tab 切换
+.tab-floor{
+	.floor-cont{
+		display: none;
+		&.act{
+			display: block;
+		}
+	}
+}
+.layer-box{
+	// 管理团队
+	&.management{
+		$height: 440px;
+		$padding: 40px;
+		$imgheight: $height - $padding * 2;
+		$imgWidth: $imgheight  * 3 / 4;
+		width: 800px;
+		min-height: $height;
+		padding: $padding;
+		font-size: 16px;
+		img{
+			float: left;
+			width: $imgWidth;
+			height: $imgheight;
+		}
+		.cont{
+			margin-left: $imgWidth + $padding;
+		}
+		.s-name{
+			margin-bottom: 20px;
+			font-size: 24px;
+		}
+		.s-title{
+			position: relative;
+			color: #9B9B9B;
+			&::after{
+				content: '';
+				display: block;
+				width: 30px;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				border-bottom: 1px solid #000;
+			}
+		}
+		.s-describe{
+			color: #4a4a4a;
+		}
+	}
+		.i-x{
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			cursor: pointer;
+			&:hover{
+				opacity: .7;
+			}
+		}
+
+	&.employee{
+		top: 50px;
+		left: 50px;
+		right: 50px;
+		transform: translate(0,0);
+		height: 600px;
+		margin-bottom: 50px;
+		.img{
+			width: 100%;
+			height: 100%;
+			background: #fff center no-repeat;
+			background-size: contain;
+		}
+	}
+}
+
+
+
+
+@media (max-width: $screen-sm) {
+	.floor-cont.wrapper{
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	// tab 1 内容 企业愿景
+	.floor-1{
+		img{
+			margin-top: 30px;
+			margin-bottom: 60px;
+		}
+	}
+
+	.floor-2{
+		// 网格元素
+		$col-padding: 10px;
+		// 微刊
+		.col-wrap{
+			.col-outter{
+			}
+			.col-item,.col-inner{
+				margin-bottom: 20px;
+				font-size: 14px;
+				.img{
+					margin-bottom: 10px;
+				}
+			}
+			h4{
+				font-size: 18px;
+			}
+		}
+
+	}
+
+
+
+	// tab 3 内容 未名Family
+	.floor-3{
+		// 轮播
+		.swiper-container{
+			width: 100%;
+			height: 300px;
+		}
+		// 列表
+		.col-wrap{
+			margin-top: 20px;
+			.col-inner{
+				margin-bottom: 20px;
+			}
+		}
+
+	}
+
+	.floor-4{
+
+		
+	}
+
+
+	// tab 5 内容 未名之歌
+	.floor-5{
+		.progress{
+
+			.btn{
+				width: 50px;
+				height: 50px;
+				
+				margin-left: -25px;
+				margin-bottom: -25px;
+			}
+		}
+		.wrapper{
+			img{
+
+				margin-top: 50px;
+				margin-bottom: 50px;
+			}
+
+		}
+	}
+
+
+	// 弹框
+	.layer-box{
+		// 管理团队
+		&.management{
+			$height: 90%;
+			$padding: 20px;
+
+			$imgWidth: 240px;
+			$imgHeight: $imgWidth * 4/3;
+
+			width: 90%;
+			height: $height;
+			min-height: 10px;
+			padding: $padding;
+			font-size: 14px;
+			overflow-y: auto;
+			overflow-x: hidden;
+
+			img{
+				float: none;
+				display: block;
+				width: $imgWidth;
+				height: $imgHeight;
+			}
+			.cont{
+				margin-left: 0;
+			}
+			.s-name{
+				margin: 20px 0 10px;
+				font-size: 18px;
+			}
+		}
+
+		&.employee{
+			top: 8%;
+			left: 8%;
+			right: 8%;
+			bottom: 8%;
+			margin-bottom: 0;
+			height: auto;
+			// .img{
+			// 	width: 100%;
+			// 	height: 100%;
+			// 	background: #fff center no-repeat;
+			// 	background-size: contain;
+			// }
+		}
+	}
+
+}
+
+@media (max-width: $screen-xs) {
+	// 弹框
+	.layer-box{
+		// 管理团队
+		&.management{
+			$imgWidth: 200px;
+			$imgHeight: $imgWidth * 4/3;
+
+			img{
+			
+				width: $imgWidth;
+				height: $imgHeight;
+			}
+		
+		}
+
+	}
+}

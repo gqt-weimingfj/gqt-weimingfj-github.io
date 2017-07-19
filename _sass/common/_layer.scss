@@ -1,0 +1,25 @@
+
+// 弹框
+.layer-backdrop{
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.5);
+	overflow: auto;
+	// display: none;
+	&.overflow-hidden{
+		overflow: hidden;
+	}
+
+	.layer-box{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		background-color: #fff;
+		transform: translate(-50%,-50%);
+
+	}
+}

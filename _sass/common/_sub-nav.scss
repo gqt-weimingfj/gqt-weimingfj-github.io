@@ -1,0 +1,78 @@
+
+.sub-nav-wrapper{
+	margin-bottom: 20px;
+	box-shadow: 0 3px 3px #f2f2f2;
+	font-size: 0;
+	text-align: center;
+}
+.sub-nav{
+	display: inline-block;
+	li{
+		position: relative;
+		float: left;
+		margin: 0 40px;
+		padding-top: 20px;
+		padding-bottom: 12px;
+		font-size: 14px;
+		text-align: center;
+		cursor: pointer;
+		&.cur,&.act,&:hover{
+			&::after{
+				background: #000;
+			}
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			display: inline-block;
+			width: 20px;
+			height: 2px;
+			margin-left: -10px;
+			background: transparent;
+		}
+		.ii{
+			width: 22px;
+			height: 22px;
+			margin-bottom: 15px;
+		}
+		.i-main{background-image: url($imgIcon + "sn-main.svg")}
+		.i-branch{background-image: url($imgIcon + "sn-branch.svg")}
+		.i-brain{background-image: url($imgIcon + "sn-brain.svg")}
+		.i-rock{background-image: url($imgIcon + "sn-rock.svg")}
+		.i-papper{background-image: url($imgIcon + "sn-papper.svg")}
+		// 电话
+		.i-tel{background-image: url($imgIcon + "sn-tel.svg")}
+		.i-flower{background-image: url($imgIcon + "sn-flower.svg")}
+		.i-farming{background-image: url($imgIcon + "sn-farming.svg")}
+		.i-note{background-image: url($imgIcon + "sn-note.svg")}
+		.i-book{background-image: url($imgIcon + "sn-book.svg")}
+		.i-star{background-image: url($imgIcon + "sn-star.svg")}
+		.i-house{background-image: url($imgIcon + "sn-house.svg")}
+		.i-music{background-image: url($imgIcon + "sn-music.svg")}
+		.i-circle{background-image: url($imgIcon + "sn-circle.svg")}
+	}
+}
+
+// media
+@media (max-width: $screen-sm){
+	.sub-nav-wrapper-box{
+		overflow-y: hidden;
+		.wrapper-box{
+			width: 100%;
+			min-width: 400px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	.sub-nav{
+
+		li{
+			margin: 0 10px;
+			.ii{
+				display: none;
+			}
+		}
+	}
+}

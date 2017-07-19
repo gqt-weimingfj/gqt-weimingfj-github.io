@@ -1,0 +1,336 @@
+---
+---
+@import 'helper/_variable.scss';
+@import 'helper/_mixin.scss';
+
+.about-banner{
+	background-image: url($img + "about/about-banner.png")
+}
+
+// 组件
+.steps{
+	position: relative;
+	padding-left: 55px;
+	color: #000;
+	&::before,&::after{
+		content: '';
+		position: absolute;
+		display: inline-block;
+	}
+	&::before{
+		top: 0;
+		left: 0;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: #57a8d6;
+	}
+	&::after{
+		top: 5px;
+		bottom: -10px;
+		left: 15px;
+		width: 0;
+		border: 1px dashed #57a8d6;
+	}
+	&:last-of-type{
+		&::after{
+			display: none;
+		}
+	}
+	dt{
+		margin-bottom: 13px;
+		font-size: 24px;
+	}
+	dd{
+		margin-bottom: 15px;
+		font-size: 18px;
+	}
+}
+
+// tab 层
+.tab-floor{
+	// floor-1 集团简介
+	.floor-1{
+		position: relative;
+	}
+	// floor-2 组织架构
+	.floor-2{}
+	// floor-3 经营理念
+	.floor-3{}
+	// floor-4 大事记
+	.floor-4{}
+	// floor-5 企业荣誉
+	.floor-5{}
+
+	// 图片
+	.text-box{
+		
+		p{
+			margin-top: 20px;
+			margin-bottom: 40px;
+		}
+	}
+	.img-box{
+		background: center no-repeat;
+		background-size: cover;
+	}
+	.fs-lg{
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+}
+
+// floor-1 集团简介
+.floor-1{
+	.text-box{
+		position: relative;
+		z-index: 1;
+		height: 750px;
+	}
+	.img-box{
+		background-image: url($img + "about/img-group-profile.png");
+	}
+	.inner{
+		background-color: rgba(255,255,255,.9);
+	}
+}
+// floor-2 组织架构
+.floor-2{
+	padding-top: 20px;
+	text-align: center;
+	img{
+		width: auto;
+		max-width: 95%;
+	}
+}
+// floor-3 经营理念
+.floor-3{
+	dl{
+		line-height: 1.8;
+	}
+	dt{
+		margin-top: 30px;
+	}
+	.img-box{
+		background-size: contain;
+		background-image: url($img + "about/img-management-idea.png");
+	}
+}
+// floor-4 大事记
+.floor-4{
+
+}
+// floor-5 企业荣誉
+.floor-5{
+	padding: 50px 0;
+	.slider-container{
+		margin-bottom: 20px;
+		overflow: hidden;
+		ul{
+			height: 237px;
+			overflow: hidden;
+		}
+		li{
+			float: left;
+			width: 380px;
+			padding: 0 10px;
+
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+
+
+	dt,dd{
+		line-height: 2;
+	}
+}
+
+// tab 切换
+.tab-floor{
+	.floor-cont{
+		display: none;
+		&.act{
+			display: block;
+		}
+	}
+}
+
+
+
+
+
+// media 大屏
+@media (min-width: $screen-sm){
+	// floor-1 集团简介
+	.floor-1{
+		.text-box{
+			height: 750px;
+			padding: 40px;
+			font-size: 18px;
+		}
+		.img-box{
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 750px;
+		}
+		.inner{
+			padding: 40px;
+		}
+	}
+
+
+	// floor-2 组织架构
+	.floor-2{
+		padding-bottom: 80px;
+	}
+
+
+	// 经营理念
+	.floor-3{
+		
+		.text-box{
+			padding: 40px;
+		}
+		
+		dt{
+			font-size: 32px;
+		}
+		dd{
+			font-size: 18px;
+		}
+		.img-box{
+			height: 960px;
+		}
+
+	}
+
+
+	.floor-4{
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	.floor-5{
+		padding: 50px 0;
+		
+		dt,dd{
+			line-height: 2;
+		}
+	}
+}
+
+
+// media 小屏
+@media (max-width: $screen-sm){
+	.fs-lg{
+		font-size: 24px;
+	}
+
+	// floor-1 集团简介
+	.floor-1{
+		.text-box{
+			height: 400px;
+			padding: 20px;
+			font-size: 14px;
+		}
+		.img-box{
+			position: relative;
+			height: 400px;
+		}
+		.inner{
+			padding: 20px;
+		}
+		
+	}
+
+
+	// floor-2 组织架构
+	.floor-2{
+		padding-bottom: 60px;
+	}
+
+	// 经营理念
+	.floor-3{
+		
+		.text-box{
+			
+			padding: 20px;
+		}
+		dt{
+			font-size: 18px;
+		}
+		dd{
+			font-size: 14px;
+		}
+		.img-box{
+			height: 600px;
+		}
+
+	}
+
+	.floor-4{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	.floor-5{
+		padding: 30px 0;
+		dt,dd{
+			line-height: 2;
+		}
+
+		.slider-container{
+			ul{
+				height: 119px;
+			}
+			li{
+				width: 200px;
+				img{
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.steps{
+		padding-left: 30px;
+		&::before{
+			width: 16px;
+			height: 16px;
+			top: 7px;
+		}
+		&::after{
+			left: 7px;
+			top: 7px;
+			bottom: -20px;
+		}
+		dt{
+			margin-bottom: 5px;
+			font-size: 16px;
+		}
+		dd{
+			margin-bottom: 5px;
+			font-size: 14px;
+		}
+	}
+}
+
+// 区间
+@media (min-width: $screen-sm) and (max-width: 1000px){
+	.fs-lg{
+		font-size: 28px;
+	}
+	.floor-3{
+		dt{
+			font-size: 16px;
+		}
+		dd{
+			font-size: 14px;
+		}
+	}
+}

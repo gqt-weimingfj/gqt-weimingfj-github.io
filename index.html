@@ -1,0 +1,113 @@
+---
+layout: default
+title: 首页
+css: [/index.css]
+script: [js/pages/index.js]
+---
+  
+    <!-- top-banner  -->
+    <div class="index-video" id="indexEmbed" >
+        <div class="inner">
+            <h2>未来世界 <i></i> 名下无虚</h2>
+            <button class="play-btn"></button>
+        </div>
+        <div class="embed">
+            <video class="embed-item" loop autoplay muted="true">
+                <source src="./source/index-introduce.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <!-- top-banner enc -->
+    <!-- businness-items  -->
+    <ul class="businness-items row">
+        <li class="col-sm-3 col-12">
+            <div class="inner-wrap">
+                <div class="inner">
+                    <h3>我们投资的领域。</h3>
+                    <p class="sm-hidden">“ 在未来每一家公司都应该是把真正价值带给人类发展的公司 ”</p>
+                </div>
+            </div>
+        </li>
+        <li class="col-sm-3 col-12">
+            <div class="inner-wrap">
+                <div class="inner">智慧物流，未名集团专注于智慧物流技术应用</div>
+            </div>
+            <div class="mask">
+                智慧物流，未名集团专注于智慧物流技术应用，行业互联网平台建设以及智慧产业园的投资建设与运营，始终坚持信息技术与传统产业相结合、虚拟和实体经济相结合的两个经济经营模式，顺势而为应势而进。
+            </div>
+        </li>
+        <li class="col-sm-3 col-12">
+            <div class="inner-wrap">
+                <div class="inner">特色小镇，我们希望把建筑的美和城市生活完美结合</div>
+            </div>
+            <div class="mask">特色小镇，我们希望把建筑的美和城市生活完美结合</div>
+        </li>
+        <li class="col-sm-3 col-12">
+            <div class="inner-wrap">
+                <div class="inner">现代农业，更加高效，安全，健康的运作方式</div>
+            </div>
+            <div class="mask">现代农业，更加高效，安全，健康的运作方式</div>
+        </li>
+    </ul>
+    <!-- businness-items enc -->
+    
+    <!-- businness-swiper  -->
+    <div class="businness-swiper">
+        <div class="swiper-container wrapper-box">
+            <div class="swiper-wrapper">
+                {% for project in site.data.index.project %}
+                <div class="swiper-slide">
+                    <div class="item">
+                        <img src="{{project.img}}" alt="">
+                        <div class="btm-info">
+                            <h3>{{project.name}}</h3>
+                            <h4>{{project.subName}}</h4>
+                            <p>{{project.summary}}</p>
+                            <span class="mark mk1">{{project.sign}}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- businness-swiper enc -->
+    <!-- wm-show  -->
+    <div class="wm-show">
+        <div class="bg-box"></div>
+        <div class="text-box">
+            <div class="wrapper-box cf">
+                <div class="col-sm-6 col-12">
+                    <span>未名观点</span>
+                    <h3 class="fs-lg">企业小规模多<br>元化时代将到来</h3>
+                    <p>元化时代将到来元化时代将到来元化时代将到来元化时代将到来元化时代将到来元化时代将到来元化时代将到来元化时代将到来元化时代将到来元化时代将到来</p>
+                    <a href="#" class="fc-primary">查看更多 &gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- wm-talk enc -->
+    <!-- join-show -->
+    <div class="join-show">
+        <div class="wrapper-box">
+            <div class="title-box">
+                <h3 class="fs-lg">跟我们一起创造更多影响力。</h3>
+                <p>这里的工作将最直接的影响到现代商业文明和社区。在未名集团，你将可以做到</p>
+            </div>
+            <div class="row">
+                {% for item in site.data.index.job %}
+                <div class="col-sm-4 col-12 item">
+                    <i class="ii i-{{forloop.index}}"></i>
+                    <h5>{{item.title}}</h5>
+                    <div>
+                        <p>{{item.summary}}</p>
+                    </div>
+                    <a href="{{item.link}}" class="fc-primary">查看职位 &gt;</a>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!-- join-showenc -->
+  
